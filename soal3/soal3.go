@@ -1,15 +1,16 @@
 package soal3
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
 )
 
-type Data struct {
-	id     int    `json:"id"`
-	tittle string `json:"tittle"`
-	body   string `json:"body"`
+type data struct {
+	Id     int    `json:"id"`
+	Tittle string `json:"title"`
+	Body   string `json:"body"`
 }
 
 func Soal3() {
@@ -27,6 +28,14 @@ func Soal3() {
 	if err != nil {
 		fmt.Print(err.Error())
 	}
-	fmt.Println(string(body))
+
+	var data1 []data
+	json.Unmarshal(body, &data1)
+	for _, v := range data1 {
+		fmt.Println(v.Id)
+		fmt.Println(v.Tittle)
+		fmt.Println(v.Body)
+
+	}
 
 }

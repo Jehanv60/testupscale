@@ -1,0 +1,24 @@
+1. Anda memiliki sebuah API yang mengembalikan data JSON. Bagaimana cara Anda
+mengambil data dari API tersebut menggunakan Golang?
+- cara mengambilnya seperti jawaban soal 3 dimana kita memasukan endpoint yang ingin kita ambil
+  kemudian kita ubah data JSON tersebut menjadi byte agar dapat dibaca oleh golang dengan cara
+  menggunakan Unmarshall atau dengan decoder bawaan dari golangnya.
+2. Anda mendapat laporan bahwa ada masalah dengan performa aplikasi yang
+dibangun dengan Golang. Bagaimana cara Anda menemukan dan memperbaiki
+masalah tersebut?
+- mencari source pada aplikasi tersebut berada pada fitur apa yang membuat performa bermasalah
+  kemudian cek pada code apakah terdapat code yang memakan memori yang membuat beban berlebih 
+  pada request ke server side, jika ada maka menggunakan clean code.
+3. Anda diminta untuk membangun sebuah aplikasi backend dengan Golang. Aplikasi
+tersebut harus dapat menerima request HTTP dan mengembalikan response berupa
+data JSON. Bagaimana cara Anda memulai dan mengembangkan aplikasi tersebut?
+Apa saja yang perlu diperhatikan dalam proses pengembangan aplikasi tersebut?
+- pertama membuat schema apinya seperti GET, UPDATE, POST, DELETE, PUT dan sebagainya.
+- lalu buat database untuk proses setelah API endpointya runing.
+- buatlah routing untuk semua API yang dibutuhkan dapat menggunakan framework atau httprouter pada golang
+- kemudian pisahkan code golang untuk query database, service ke database dan controller APInya.
+- setelah semua selesai buatlah middleware untuk menhandle routenya atau pun validasi sebuah fitur.
+
+- hal yang diperhatikan adalah memisahkan code pada query database, service database dan controller API
+  hal ini bertujuan supaya pada saat terjadi error ataupun mengembangkan aplikasinya dapat memudahkan
+  kita nantinya
