@@ -18,10 +18,10 @@ func Soal5() {
 	layoutFormat = "15:04:05 PM"
 	date, _ = time.Parse(layoutFormat, value)
 	waktu := date.Format(layoutFormat)
-	if date.Format(value) == date.Format(waktu) {
+	if date.Format(value) != date.Format(waktu) {
 		fmt.Println("Waktu Dalam Format 24 Jam", "\t->", waktu)
 	} else {
-		fmt.Println(value, layoutFormat)
+		fmt.Println(value, date.Format(value))
 		fmt.Println("Invalid")
 	}
 
